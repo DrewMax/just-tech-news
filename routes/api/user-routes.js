@@ -34,6 +34,14 @@ router.get('/', (req, res) => {
               attributes: ['id', 'post_url', 'title', 'created_at']
             },
             {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title']
+                }
+            },
+            {
                 model: Post,
                 attributes: ['title'],
                 through: Vote,
