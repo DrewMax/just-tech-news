@@ -5,7 +5,7 @@ const Comment = require('./Comment');
 const commentRoutes = require('../routes/api/comment-routes');
 const router = require('../routes');
 
-router.use('/comments', commentRoutes);
+
 // create associations
 User.hasMany(Post, {
     foreignKey: 'user_id'
@@ -60,6 +60,7 @@ Post.hasMany(Comment, {
 });
 
 
+router.use('/comments', commentRoutes);
 
 
 

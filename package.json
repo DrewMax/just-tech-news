@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Object Relational Mapping",
   "main": "server.js",
-  "start": "node server.js",
+  "start": "npm start",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  
   "keywords": [],
   "author": "Djm",
   "license": "ISC",
@@ -15,7 +15,7 @@
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "heroku": "^7.3.0",
+    "heroku": "^7.7.8",
     "mysql2": "^3.2.0",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
