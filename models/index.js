@@ -2,8 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Vote = require('./Vote');
 const Comment = require('./Comment');
-const commentRoutes = require('../routes/api/comment-routes');
-const router = require('../routes');
+
 
 
 // create associations
@@ -60,7 +59,6 @@ Post.hasMany(Comment, {
 });
 
 
-router.use('/comments', commentRoutes);
 
 
 
