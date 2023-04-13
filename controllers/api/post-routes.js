@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment, Vote } = require('../../models');
+const sequelize = require('../../config/connection');
 
 
 // get all users
@@ -94,8 +95,7 @@ router.put('/upvote', (req, res) => {
         where: {
           id: req.params.id
         }
-      }
-    )
+      })
       .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this id' });
