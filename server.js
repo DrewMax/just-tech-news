@@ -7,7 +7,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'YOU SHALL NOT PASS!',
+    secret: 'YOU SHALL NOT PASS!, i am so seriously not a wizard',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -15,9 +15,6 @@ const sess = {
         db: sequelize
     })
 };
-
-
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -47,4 +44,7 @@ const hbs = exphbs.create({});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
+
 
