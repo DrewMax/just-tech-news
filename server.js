@@ -3,6 +3,9 @@ const express = require('express');
 const routes = require('./controllers/api');
 const sequelize = require('./config/connection');
 const session = require('express-session');
+const helpers = require('./utils/helpers');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({ helpers });
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -39,9 +42,6 @@ sequelize.sync({ force: false })
 
 
 // Compare this snippet from w14\config\connection.js:
-
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
